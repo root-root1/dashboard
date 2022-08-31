@@ -1,4 +1,4 @@
-import { ActionType, User } from "../action-types";
+import { ActionType, User, CustomerAction, CreateCustomerData } from "../action-types";
 
 interface SetUserAction {
     type: typeof ActionType.SET_USER;
@@ -26,6 +26,11 @@ interface NeedVerification {
 interface SetSuccessAction {
     type: typeof ActionType.SET_SUCCESS;
     payload: string;
+}
+
+export interface SetNewCustomer {
+    type: typeof CustomerAction.CREATE_CUSTOMER;
+    payload: CreateCustomerData
 }
 
 export type AuthAction = SetUserAction

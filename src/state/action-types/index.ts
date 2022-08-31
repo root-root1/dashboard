@@ -7,6 +7,10 @@ export enum ActionType {
     SET_SUCCESS = 'SET_SUCCESS',
 }
 
+export enum CustomerAction {
+  CREATE_CUSTOMER = 'CREACT_CUSTOMER'
+}
+
 export interface User {
     firstName: string;
     email: string;
@@ -32,4 +36,16 @@ export interface SignUpData {
 export interface SignInData {
   email: string;
   password: string;
+}
+
+export interface CreateCustomerData {
+  representation_company: string;
+  full_name: string;
+  email: string;
+  gender: string;
+  address: string;
+  phone_number: number;
+  bank_type: string;
+  customer_type: string;
+  territory: string;
 }
