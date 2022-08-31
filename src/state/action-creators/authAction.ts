@@ -5,7 +5,7 @@ import { RootState } from '../reducers';
 import firebase from '../../firebase/config';
 
 
-const signUp = (data: SignUpData, onError: () => void): ThunkAction<void, RootState, null, AuthAction> => {
+export const signUp = (data: SignUpData, onError: () => void): ThunkAction<void, RootState, null, AuthAction> => {
     return async (dispatch) => {
         try {
             const res = await firebase.auth().createUserWithEmailAndPassword(data.email, data.password);
@@ -79,7 +79,7 @@ export const signIn = (data: SignInData, onError: () => void): ThunkAction<void,
 }
 
 // log out
-export const logOut = (): ThunkAction<void, RootState, null, AuthAction> => {
+export const signOut = (): ThunkAction<void, RootState, null, AuthAction> => {
     return async (dispatch) => {
         try {
             dispatch(setLoading(true));

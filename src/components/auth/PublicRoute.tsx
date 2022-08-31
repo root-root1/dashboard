@@ -6,10 +6,10 @@ interface Props extends RouteProps {
     component: any
 }
 
-const PrivateRoute: FC<Props> = ({ component: Component, ...rest }) => {
+const PublicRoute: FC<Props> = ({ component: Component, ...rest }) => {
     const { authenticated } = useTypeSelector(state => state.auth);
 
-    return (<Route {...rest} render={(props:any) => authenticated ? <Component /> : <Redirect to='/signin' />} />)
+    return (<Route {...rest} render={(props: any) => !authenticated ? <Component {...props} /> : <Redirect to='/dashboard' />} />)
 }
 
-export default PrivateRoute;
+export default PublicRoute;
