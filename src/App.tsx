@@ -1,5 +1,5 @@
 import React, { FC, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { BrowserRouter, Switch } from 'react-router-dom';
 import './App.css';
 
@@ -16,6 +16,7 @@ import { getUserById, setLoading, setNeedVerification } from './state/action-cre
 import { RootState } from './state';
 import { useTypeSelector } from './hooks/useTypeSelector';
 import { AnyAction } from 'redux';
+import CustomerForm from './components/pages/CustomerForm';
 
 const App: FC = () => {
   const dispatch = useDispatch();
@@ -51,7 +52,8 @@ const App: FC = () => {
         <PublicRoute path='/' component={Homepage} exact />
         <PublicRoute path='/signup' component={SignUp} exact />
         <PublicRoute path='/signIn' component={SignIn} exact />
-        <PrivateRoute path='/dashboard' component={Dashboard} />
+        <PrivateRoute path='/dashboard' component={Dashboard} exact />
+        <PrivateRoute path='/add-customer' component={CustomerForm} exact />
       </Switch>
     </BrowserRouter>
   );

@@ -7,7 +7,6 @@ const HomePages:FC = () => {
                 <h2 className='title has-text-centered is-size-1 mb-6'>
                     Welcome
                 </h2>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat, quos!</p>
             </div>
         </section>
     )

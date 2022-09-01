@@ -8,7 +8,8 @@ export enum ActionType {
 }
 
 export enum CustomerAction {
-  CREATE_CUSTOMER = 'CREACT_CUSTOMER'
+  CREATE_CUSTOMER = 'CREACT_CUSTOMER',
+  SET_CUSTMER_ERROR = 'SET_CUSTMER_ERROR',
 }
 
 export interface User {
@@ -39,12 +40,14 @@ export interface SignInData {
 }
 
 export interface CreateCustomerData {
+  id: string;
   representation_company: string;
   full_name: string;
   email: string;
   gender: string;
   address: string;
   phone_number: number;
+  error?: string,
   bank_type: string;
   customer_type: string;
   territory: string;

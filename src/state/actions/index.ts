@@ -28,10 +28,17 @@ interface SetSuccessAction {
     payload: string;
 }
 
-export interface SetNewCustomer {
+interface SetNewCustomer {
     type: typeof CustomerAction.CREATE_CUSTOMER;
     payload: CreateCustomerData
 }
+
+interface SetCustomerErrorAction{
+    type: typeof CustomerAction.SET_CUSTMER_ERROR;
+    payload: string
+}
+
+export type CustomAction = SetNewCustomer | SetCustomerErrorAction;
 
 export type AuthAction = SetUserAction
     | SetLoadingAction
